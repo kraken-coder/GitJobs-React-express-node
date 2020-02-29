@@ -1,4 +1,4 @@
-# React App Skelaton <br />
+:rocket: # React App Skelaton <br />
 
 ### A more flexible boilerplate for building react applications
 
