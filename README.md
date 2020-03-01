@@ -26,4 +26,4 @@ or
 This app use the webpack-dev-server which by default use port 5000
 You can change the default port by adding to the package.json start script --port flag followed by the port you want to use. for example --port 3000
 
-You can check out the official docs heres
+You can check out the official docs [here](https://www.google.com/search?client=firefox-b-d&q=webpack+dev+server)
