@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 //  @ material Helpers
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from '@material-ui/core/styles'
 //  importing  material UI core components
-import Card from "@material-ui/core/Card"
+import Card from '@material-ui/core/Card'
 import {
   DoughnutChart,
   LineChart,
@@ -12,39 +12,42 @@ import {
   ScatterChart,
   HorizontalChart,
   RadarChart,
-  BubbleChart
-} from "./../../Layout/Graph"
+  BubbleChart,
+} from '../../Layout/Graph'
 
 // external Styling
-import styles from "../../assets/Styles/components/card"
+import styles from '../../assets/Styles/components/card'
 
 // const charts = [DoughnutChart, LineChart, PieChart];
 
 const chartItem = (type, data, height) => {
-  if (type === "doughnut") {
+  if (type === 'doughnut') {
     return <DoughnutChart data={data} />
   }
-  if (type === "pie") {
+  if (type === 'pie') {
     return <PieChart data={data} />
   }
-  if (type === "line") {
+  if (type === 'line') {
     return <LineChart data={data} height={height} />
   }
-  if (type === "scatter") {
+  if (type === 'scatter') {
     return <ScatterChart data={data} />
   }
-  if (type === "horizontal") {
+  if (type === 'horizontal') {
     return <HorizontalChart data={data} />
   }
-  if (type === "bubble") {
+  if (type === 'bubble') {
     return <BubbleChart data={data} />
   }
-  if (type === "radar") {
+  if (type === 'radar') {
     return <RadarChart data={data} />
   }
+
+  return null
 }
 const useStyles = makeStyles(styles)
 
+// eslint-disable-next-line react/prop-types
 const CardInfo = ({ data, type, height }) => {
   const classes = useStyles()
   return (
@@ -59,7 +62,7 @@ const CardInfo = ({ data, type, height }) => {
 CardInfo.propType = {
   height: PropTypes.number.isRequired,
   data: PropTypes.object.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
 }
 
 export default CardInfo

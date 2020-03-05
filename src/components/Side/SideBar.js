@@ -1,69 +1,67 @@
-import React from "react"
-import PropTypes from "prop-types"
+/* eslint-disable react/prop-types */
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 // Importing Material UI helper
 // import Hidden from '@material-ui/core/Hidden';
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from '@material-ui/core/styles'
 //   importing core material UI
-import Divider from "@material-ui/core/Divider"
-import Drawer from "@material-ui/core/Drawer"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
-import Icon from "@material-ui/core/Icon"
+import Divider from '@material-ui/core/Divider'
+import Drawer from '@material-ui/core/Drawer'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import Icon from '@material-ui/core/Icon'
+import Button from '@material-ui/core/Button'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 //  importing styling
-import styles from "../../assets/Styles/components/SideBarStyles"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import styles from '../../assets/Styles/components/SideBarStyles'
 
-import Button from "@material-ui/core/Button"
 const useStyles = makeStyles(styles)
 
+// eslint-disable-next-line react/prop-types
 const SideBar = ({ routes }) => {
   const classes = useStyles()
-  const activeRoute = (routeName) => {
-    return window.location.href.indexOf(routeName) > -1 ? true : false
-  }
+  const activeRoute = routeName => window.location.href.indexOf(routeName) > -1
 
-  const color = "#fefefe"
+  const color = '#fefefe'
 
   const links = (
     <List className={classes.list}>
-      {routes.map((props, key) => {
-        return (
-          <NavLink
-            to={props.layout + props.path}
-            className={classes.navLink}
-            active="active"
-            key={key}
+      {routes.map(props => (
+        <NavLink
+          to={props.layout + props.path}
+          className={classes.navLink}
+          active="active"
+          key={props.path}
+        >
+          <ListItem
+            button
+            className={
+              activeRoute(props.layout + props.path)
+                ? classes.activelistItem
+                : classes.listItem
+            }
           >
-            <ListItem
-              button
-              className={
-                activeRoute(props.layout + props.path)
-                  ? classes.activelistItem
-                  : classes.listItem
-              }
-            >
-              {typeof props.icon === "string" ? (
-                <Icon>{props.icon}</Icon>
-              ) : (
-                <props.icon className={classes.icon} />
-              )}
-              <ListItemText primary={props.name} classnames={classes.listText} />
-            </ListItem>
-          </NavLink>
-        )
-      })}
+            {typeof props.icon === 'string' ? (
+              <Icon>{props.icon}</Icon>
+            ) : (
+              <props.icon className={classes.icon} />
+            )}
+            <ListItemText primary={props.name} classnames={classes.listText} />
+          </ListItem>
+        </NavLink>
+      ))}
     </List>
   )
 
   const info = (
     <div className={classes.topInfo}>
       <div className={classes.topInfoItem}>
-        <h3>Main Office</h3>{" "}
+        <h3>Main Office</h3>{' '}
         <Button>
-          <ExpandMoreIcon style={{ color: "white", fontSize: "35px" }} />
+          <ExpandMoreIcon style={{ color: 'white', fontSize: '35px' }} />
         </Button>
       </div>
     </div>
@@ -80,14 +78,14 @@ const SideBar = ({ routes }) => {
         anchor="left"
         className={classes.drawer}
         classes={{
-          paper: classes.drawerPaper
+          paper: classes.drawerPaper,
         }}
         elevation={56}
       >
         {info}
         <Divider
           style={{
-            boxShadow: `2px 2px 2px ${color}`
+            boxShadow: `2px 2px 2px ${color}`,
           }}
         />
         <div className={classes.toolbar} />
@@ -101,6 +99,6 @@ const SideBar = ({ routes }) => {
 }
 
 SideBar.prototype = {
-  routes: PropTypes.array.isRequired
+  routes: PropTypes.array.isRequired,
 }
 export default SideBar

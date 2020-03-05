@@ -1,20 +1,20 @@
-import React, { useEffect, createRef } from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+import React, { useEffect, createRef } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 //  importing material UI Helpers
-import CssBaseLine from "@material-ui/core/CssBaseline"
-import { makeStyles } from "@material-ui/core/styles"
+import CssBaseLine from '@material-ui/core/CssBaseline'
+import PerfectScrollbar from 'perfect-scrollbar'
+import { makeStyles } from '@material-ui/core/styles'
 //  importing core components
-import NavBar from "../components/NavBar/NavBar"
-import SideBar from "../components/Side/SideBar"
+import NavBar from '../components/NavBar/NavBar'
+import SideBar from '../components/Side/SideBar'
 
 //  importing Perfect
-import PerfectScrollbar from "perfect-scrollbar"
-import "perfect-scrollbar/css/perfect-scrollbar.css"
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
 //  importing Routes
-import routes from "../routes"
+import routes from '../routes'
 // importing styling
-import styles from "../assets/Styles/Layouts/adminstyles"
+import styles from '../assets/Styles/Layouts/adminstyles'
 
 const useStyles = makeStyles(styles)
 let ps
@@ -22,15 +22,13 @@ let ps
 //  Getting All Routes
 const allRoutes = (
   <Switch>
-    {routes.map((props, key) => {
-      return (
-        <Route
-          key={key}
-          path={props.layout + props.path}
-          component={props.component}
-        />
-      )
-    })}
+    {routes.map(props => (
+      <Route
+        key={props.icon}
+        path={props.layout + props.path}
+        component={props.component}
+      />
+    ))}
     <Redirect from="/admin" to="/admin/dashboard" />
   </Switch>
 )
@@ -41,16 +39,16 @@ const Admin = () => {
   const panel = createRef()
 
   useEffect(() => {
-    if (navigator.platform.indexOf("Win") > -1) {
+    if (navigator.platform.indexOf('Win') > -1) {
       ps = new PerfectScrollbar(panel.current, {
         suppressScrollX: true,
-        suppressScrollY: false
+        suppressScrollY: false,
       })
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden'
     }
     // Specify how to clean up after this effect:
     return function cleanup() {
-      if (navigator.platform.indexOf("Win") > -1) {
+      if (navigator.platform.indexOf('Win') > -1) {
         ps.destroy()
       }
     }

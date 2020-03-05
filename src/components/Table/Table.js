@@ -1,31 +1,31 @@
-import React from "react"
-import { withStyles, makeStyles } from "@material-ui/core/styles"
-import Table from "@material-ui/core/Table"
-import TableBody from "@material-ui/core/TableBody"
-import TableCell from "@material-ui/core/TableCell"
-import TableContainer from "@material-ui/core/TableContainer"
-import TableHead from "@material-ui/core/TableHead"
-import TableRow from "@material-ui/core/TableRow"
-import Paper from "@material-ui/core/Paper"
+import React from 'react'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
 
-import { secondaryColor } from "./../../Utils/Colors"
+import { secondaryColor } from '../../Utils/Colors'
 
-const StyledTableCell = withStyles((theme) => ({
+const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: secondaryColor(500),
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
   },
   body: {
-    fontSize: 14
-  }
+    fontSize: 14,
+  },
 }))(TableCell)
 
-const StyledTableRow = withStyles((theme) => ({
+const StyledTableRow = withStyles(theme => ({
   root: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.background.default
-    }
-  }
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
 }))(TableRow)
 
 function createData(task, request, completed, priority) {
@@ -33,16 +33,16 @@ function createData(task, request, completed, priority) {
 }
 
 const rows = [
-  createData("Change Logs", "#012", "true", "High"),
-  createData("Send Documents", "#568", "false", "Medium"),
-  createData("Finalize Deal With HR", "#780", "true", "Low"),
-  createData("Cha", "#420", "true", "High")
+  createData('Change Logs', '#012', 'true', 'High'),
+  createData('Send Documents', '#568', 'false', 'Medium'),
+  createData('Finalize Deal With HR', '#780', 'true', 'Low'),
+  createData('Cha', '#420', 'true', 'High'),
 ]
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 700
-  }
+    minWidth: 700,
+  },
 })
 
 const Tables = () => {
@@ -60,7 +60,7 @@ const Tables = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map(row => (
             <StyledTableRow key={row.request}>
               <StyledTableCell component="th" scope="row">
                 {row.task}

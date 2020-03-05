@@ -1,53 +1,53 @@
-import { boxShadow } from "../../../Utils/boxShadow"
-import { blackColor } from "../../../Utils/Colors"
+import boxShadow from '../../../Utils/boxShadow'
+import { blackColor } from '../../../Utils/Colors'
 
 const color = blackColor(500)
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     border: 0,
-    borderRadius: "10px",
+    borderRadius: '10px',
     boxShadow: boxShadow(10, 14, 5, color),
-    minHeight: "8rem",
-    display: " flex",
-    justifyContent: "end",
-    alignItems: "center",
-    color: blackColor(600)
+    minHeight: '8rem',
+    display: ' flex',
+    justifyContent: 'end',
+    alignItems: 'center',
+    color: blackColor(600),
   },
   card: {
-    maxHeight: "9rem"
+    maxHeight: '9rem',
   },
   icon: {
-    color: "white",
+    color: 'white',
 
-    fontSize: "5rem"
+    fontSize: '5rem',
   },
   container: {
-    position: "relative",
-    padding: "1.5em 0.5em 1.5em 0.5em",
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      justifyContent: "space-between"
-    }
+    position: 'relative',
+    padding: '1.5em 0.5em 1.5em 0.5em',
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
   },
   heading: {
-    marginTop: "1em"
+    marginTop: '1em',
   },
   iconContainer: {
-    [theme.breakpoints.up("sm")]: {
-      padding: "10px",
-      position: "absolute",
-      top: "-2%",
-      left: "6%",
-      borderRadius: "0.5em"
-    }
+    [theme.breakpoints.up('sm')]: {
+      padding: '10px',
+      position: 'absolute',
+      top: '-2%',
+      left: '6%',
+      borderRadius: '0.5em',
+    },
   },
   nums: {
-    textAlign: "center",
-    fontSize: "40px"
+    textAlign: 'center',
+    fontSize: '40px',
   },
   small: {
-    textAlign: "center",
-    fontSize: "12px"
+    textAlign: 'center',
+    fontSize: '12px',
   },
   cardInfo: {
     // position: 'absolute'
@@ -56,7 +56,7 @@ const styles = (theme) => ({
     // position: 'absolute',
     // top: '50%',
     // left: '60%'
-  }
+  },
 })
 
 export default styles

@@ -1,7 +1,5 @@
-import React from "react"
+import React from 'react'
 
-const Task = () => {
-  return <div>Helllo from Task</div>
-}
+const Task = () => <div>Helllo from Task</div>
 
 export default Task

@@ -1,21 +1,20 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
 
 //  @@material Ui helpers
 
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from '@material-ui/core/styles'
 // import @materail Ui Core  components
-import Card from "@material-ui/core/Card"
-import CardHeader from "@material-ui/core/CardHeader"
-import CardContent from "@material-ui/core/CardContent"
-
-// @material colors
-
-import PhoneLocked from "@material-ui/icons/PhoneLocked"
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardContent from '@material-ui/core/CardContent'
+import PhoneLocked from '@material-ui/icons/PhoneLocked'
 //  importing card styles
-import styles from "../../assets/Styles/components/card"
+import styles from '../../assets/Styles/components/card'
+
 const useStyles = makeStyles(styles)
-const CardAdmin = (props) => {
+
+const CardAdmin = props => {
+  // eslint-disable-next-line react/prop-types
   const { color, title, num, growth } = props
   const classes = useStyles()
   return (
@@ -23,7 +22,7 @@ const CardAdmin = (props) => {
       <div
         className={classes.iconContainer}
         style={{
-          backgroundColor: color
+          backgroundColor: color,
         }}
       >
         <PhoneLocked className={classes.icon} />
@@ -33,7 +32,7 @@ const CardAdmin = (props) => {
           title={title}
           className={classes.heading}
           style={{
-            textAlign: "center"
+            textAlign: 'center',
           }}
         />
 
@@ -45,13 +44,6 @@ const CardAdmin = (props) => {
       </Card>
     </div>
   )
-}
-
-CardAdmin.propType = {
-  title: PropTypes.string.isRequired,
-  color: PropTypes.func.isRequired,
-  num: PropTypes.string.isRequired,
-  growth: PropTypes.string.isRequired
 }
 
 export default CardAdmin

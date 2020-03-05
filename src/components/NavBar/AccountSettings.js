@@ -1,22 +1,21 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 
 // @@material  UI core components
-import Button from "@material-ui/core/Button"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
-import Avatar from "@material-ui/core/Avatar"
-import Typnography from "@material-ui/core/Typography"
-import Badge from "@material-ui/core/Badge"
-import TextField from "@material-ui/core/TextField"
+import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import Typnography from '@material-ui/core/Typography'
+import Badge from '@material-ui/core/Badge'
+import TextField from '@material-ui/core/TextField'
 
 //  @material Icons
-import NotificationsIcon from "@material-ui/icons/Notifications"
-import SearchIcon from "@material-ui/icons/Search"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import NotificationsIcon from '@material-ui/icons/Notifications'
+import SearchIcon from '@material-ui/icons/Search'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 //  @@ material UI helpers
-import { makeStyles } from "@material-ui/core"
-import styles from "../../assets/Styles/components/AccountSetting"
-import Styled from "styled-components"
+import { makeStyles } from '@material-ui/core'
+import Styled from 'styled-components'
+import styles from '../../assets/Styles/components/AccountSetting'
 
 const useStyles = makeStyles(styles)
 const AccountSettings = () => {
@@ -24,10 +23,10 @@ const AccountSettings = () => {
 
   const [anchor, setAnchor] = useState(null)
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     setAnchor(e.currentTarget)
   }
-  const handleClose = (e) => {
+  const handleClose = () => {
     setAnchor(null)
   }
 
@@ -42,7 +41,7 @@ const AccountSettings = () => {
           <Button>
             <Typnography variant="body1" component="h6" className={classes.title}>
               Karen White
-            </Typnography>{" "}
+            </Typnography>{' '}
             <ExpandMoreIcon
               aria-controls="account-menu"
               aria-haspopup="true"

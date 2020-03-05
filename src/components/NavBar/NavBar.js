@@ -1,28 +1,30 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 //  @ Material UI helper
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from '@material-ui/core/styles'
 //  @@ material  UI Core components
-import AppBar from "@material-ui/core/AppBar"
-import ToolBar from "@material-ui/core/Toolbar"
-import Button from "@material-ui/core/Button"
+import AppBar from '@material-ui/core/AppBar'
+import ToolBar from '@material-ui/core/Toolbar'
+import Button from '@material-ui/core/Button'
 
 // @ components
 
-import AccountSettings from "./AccountSettings"
+import Styled from 'styled-components'
+import AccountSettings from './AccountSettings'
 //  importing styles
-import styles from "../../assets/Styles/components/NavBarStyles"
-import Styled from "styled-components"
+import styles from '../../assets/Styles/components/NavBarStyles'
 
 //  Initializing Material Styles
 const useStyles = makeStyles(styles)
 
+// eslint-disable-next-line react/prop-types
 const NavBar = ({ routes }) => {
   const classes = useStyles()
   const pageName = () => {
     let page
-    routes.map((prop) => {
+    // eslint-disable-next-line react/prop-types
+    routes.map(prop => {
       if (window.location.href.indexOf(prop.layout + prop.path) !== -1) {
         page = prop.name
       }
@@ -60,7 +62,7 @@ justify-content: space-between;
 `
 
 NavBar.prototype = {
-  routes: PropTypes.array.isRequired
+  routes: PropTypes.array.isRequired,
 }
 
 export default NavBar

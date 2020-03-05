@@ -1,46 +1,47 @@
-import { blackColor } from "../../../Utils/Colors"
-const styles = (theme) => ({
+import { blackColor } from '../../../Utils/Colors'
+
+const styles = theme => ({
   title: {
-    fontSize: "12px",
-    color: "black",
-    [theme.breakpoints.down("md")]: {
-      color: "white"
+    fontSize: '12px',
+    color: 'black',
+    [theme.breakpoints.down('md')]: {
+      color: 'white',
     },
-    textTransform: "lowercase"
+    textTransform: 'lowercase',
   },
   search: {
     width: 150,
-    "&:hover": {
+    '&:hover': {
       width: 250,
-      transition: "all 150ms ease 0s"
+      transition: 'all 150ms ease 0s',
     },
-    [theme.breakpoints.down("md")]: {
-      display: "none"
-    }
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
 
   searchIcon: {
     color: blackColor(900),
     width: 30,
     height: 20,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   badgeColor: {
-    color: "red"
+    color: 'red',
   },
   notificationIcon: {
-    color: "black",
-    [theme.breakpoints.down("md")]: {
-      color: "white"
-    }
+    color: 'black',
+    [theme.breakpoints.down('md')]: {
+      color: 'white',
+    },
   },
   containerItem: {
-    margin: "0 10px 0 10px"
+    margin: '0 10px 0 10px',
   },
   card: {
-    height: "500px"
-  }
+    height: '500px',
+  },
 })
 
 export default styles
