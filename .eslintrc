@@ -1,9 +1,9 @@
 {
   "parser": "babel-eslint",
   "extends": "airbnb",
-  "plugins": ["react", "import"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier"],
   "rules": {
-    "allowArrowFunctions": true,
+    "allowArrowFunctions": 0,
     "array-bracket-spacing": "off",
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }],
     "arrow-spacing": "off",

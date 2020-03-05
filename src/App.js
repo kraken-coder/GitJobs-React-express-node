@@ -1,20 +1,30 @@
-import React, { Component } from "react"
-import "./App.css"
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <div className="section">
-          <h1 className="heading">React App Skelaton</h1>
-          <div className="inner">
-            <p className="small-text">
-              A very powerful alternative to create react app
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  }
+import React from "react"
+
+// Imports
+import { Router, Route, Switch, Redirect } from "react-router-dom"
+// import external styles
+import { backgroundColor } from "./Utils/Colors"
+import "./assets/MainStyles.css"
+//  Importing Components
+import Admin from "./views/Admin"
+import { createBrowserHistory } from "history"
+
+const App = () => {
+  const hist = createBrowserHistory()
+  return (
+    <div
+      style={{
+        backgroundColor: backgroundColor(50)
+      }}
+    >
+      <Router history={hist}>
+        <Switch>
+          <Route path="/admin" component={Admin} />
+          <Redirect from="/" to="/admin/dashboard" />
+        </Switch>
+      </Router>
+    </div>
+  )
 }
 
 export default App
